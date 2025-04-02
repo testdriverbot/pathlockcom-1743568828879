@@ -1,0 +1,49 @@
+version: 4.2.26
+session: 67ecc28425b0068b65397544
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Hover over the "Products" menu.
+    commands:
+      - command: hover-text
+        text: Products
+        description: products menu in the top navigation bar
+        action: hover
+  - prompt: Select a product from the dropdown.
+    commands:
+      - command: hover-text
+        text: Application Access Governance
+        description: first product in the featured products list
+        action: click
+  - prompt: Assert that the product page is loaded.
+    commands:
+      - command: assert
+        expect: >-
+          Application Access Governance for Your Critical Business Applications
+          is visible
+  - prompt: >-
+      Repeat for "Coverage", "Use Cases", "Support", "Resources", and "Company"
+      menus.
+    commands:
+      - command: hover-text
+        text: Coverage
+        description: coverage menu in the top navigation bar
+        action: hover
+      - command: hover-text
+        text: Use Cases
+        description: use cases menu in the top navigation bar
+        action: hover
+      - command: hover-text
+        text: Support
+        description: support menu in the top navigation bar
+        action: hover
+      - command: hover-text
+        text: Resources
+        description: resources menu in the top navigation bar
+        action: hover
+      - command: hover-text
+        text: Company
+        description: company menu in the top navigation bar
+        action: hover
