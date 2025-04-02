@@ -1,0 +1,67 @@
+version: 4.2.26
+session: 67ecc28425b0068b65397542
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click the "Schedule Demo" button.
+    commands:
+      - command: hover-text
+        text: Schedule Demo
+        description: button in the top right of the header
+        action: click
+  - prompt: Assert that the demo scheduling form is displayed.
+    commands:
+      - command: assert
+        expect: the demo scheduling form is displayed
+  - prompt: Fill in the form with test data.
+    commands:
+      - command: hover-text
+        text: First Name*
+        description: first name input field
+        action: click
+      - command: type
+        text: John
+      - command: hover-text
+        text: Last Name*
+        description: last name input field
+        action: click
+      - command: type
+        text: Doe
+      - command: hover-text
+        text: Business Email*
+        description: business email input field
+        action: click
+      - command: type
+        text: john.doe@example.com
+      - command: hover-text
+        text: Job Title*
+        description: job title input field
+        action: click
+      - command: type
+        text: Engineer
+      - command: hover-text
+        text: Phone*
+        description: phone input field
+        action: click
+      - command: type
+        text: 1234567890
+      - command: hover-text
+        text: Company Name*
+        description: company name input field
+        action: click
+      - command: type
+        text: ExampleCorp
+      - command: hover-text
+        text: Employees*
+        description: number of employees input field
+        action: click
+      - command: type
+        text: 100
+      - command: hover-text
+        text: Describe Your Use Case*
+        description: use case description input field
+        action: click
+      - command: type
+        text: Testing purposes
