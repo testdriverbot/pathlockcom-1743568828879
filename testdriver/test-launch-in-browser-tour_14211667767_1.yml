@@ -1,0 +1,27 @@
+version: 4.2.26
+session: 67ecc285a131112210998a9c
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click the "Launch In-Browser Tour" button.
+    commands:
+      - command: hover-text
+        text: Launch In-Browser Tour
+        description: button to start the in-browser tour
+        action: click
+  - prompt: Assert that the in-browser tour starts.
+    commands:
+      - command: assert
+        expect: Which Pathlock capabilities are you interested in?
+  - prompt: Navigate through the tour steps.
+    commands:
+      - command: hover-text
+        text: Continue
+        description: button to proceed to the next step in the tour
+        action: click
+  - prompt: Assert that each step displays the correct information.
+    commands:
+      - command: assert
+        expect: Which Pathlock capabilities are you interested in?
